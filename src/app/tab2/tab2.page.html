@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Resumen</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  @if (datos.enviado()) {
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>
+          Hola, {{ datos.nombre() }}
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <p><strong>Edad:</strong> {{ datos.edad() }} años</p>
+        <p><strong>Facultad:</strong> {{ datos.facultad() }}</p>
+        <p>El valor que enviaste es:</p>
+        <h1>{{ datos.contador() }}</h1>
+      </ion-card-content>
+    </ion-card>
+  } @else {
+    <p>Primero ingresa tus datos y pulsa "Enviar al resumen".</p>
+  }
+</ion-content>
